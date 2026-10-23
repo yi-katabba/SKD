@@ -1831,6 +1831,7 @@ input:checked+.slider:before{transform:translateX(22px);}
 #akunPage .btn-logout{border-radius:16px;}
 
 /* ---- Kartu unduh APK (hanya tampil di versi web) ---- */
+<<<<<<< HEAD
 .apk-card{display:none;background:linear-gradient(135deg,#0D47A1 0%,#1976D2 60%,#26A69A 100%);color:#fff;border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 8px 22px rgba(13,71,161,.28);position:relative;overflow:hidden;}
 .apk-card.show{display:block;}
 .apk-card::after{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.1);}
@@ -1868,6 +1869,20 @@ input:checked+.slider:before{transform:translateX(22px);}
 .upd-bbtn{background:#fbbf24;color:#1e3a8a;border:0;border-radius:10px;padding:8px 12px;font-weight:800;font-size:13px;font-family:inherit;}
 .upd-bbtn.ghost{background:rgba(255,255,255,.18);color:#fff;}
 .upd-bx{background:transparent;color:#fff;border:0;font-size:18px;padding:0 4px;}
+=======
+#akunPage .apk-card{display:none;background:linear-gradient(135deg,#0D47A1 0%,#1976D2 60%,#26A69A 100%);color:#fff;border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:0 8px 22px rgba(13,71,161,.28);position:relative;overflow:hidden;}
+#akunPage .apk-card.show{display:block;}
+#akunPage .apk-card::after{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.1);}
+#akunPage .apk-top{display:flex;align-items:center;gap:12px;position:relative;z-index:1;}
+#akunPage .apk-ic{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+#akunPage .apk-title{font-size:15px;font-weight:800;letter-spacing:-.2px;}
+#akunPage .apk-sub{font-size:12px;opacity:.9;margin-top:2px;line-height:1.4;}
+#akunPage .apk-meta{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;position:relative;z-index:1;}
+#akunPage .apk-chip{background:rgba(255,255,255,.18);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:700;}
+#akunPage .apk-btn{display:block;text-align:center;text-decoration:none;margin-top:12px;background:#FBBF24;color:#0D2A6B;font-weight:800;font-size:14px;border-radius:12px;padding:11px;position:relative;z-index:1;}
+#akunPage .apk-btn:active{opacity:.85;}
+#akunPage .apk-note{font-size:11px;opacity:.88;margin-top:10px;line-height:1.5;position:relative;z-index:1;}
+>>>>>>> 2c0a35f7ab724062837633b1b33d04492427d1c3
 
 /* ---- Pencapaian ---- */
 #pencapaianPage .pencapaian-tier-label{
@@ -2446,7 +2461,11 @@ input:checked+.slider:before{transform:translateX(22px);}
         <div class="pf-ach-icons" id="pfAchIcons"></div>
       </div>
 
+<<<<<<< HEAD
       <div class="apk-card">
+=======
+      <div class="apk-card" id="apkCard">
+>>>>>>> 2c0a35f7ab724062837633b1b33d04492427d1c3
         <div class="apk-top">
           <div class="apk-ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/></svg></div>
           <div>
@@ -2454,8 +2473,13 @@ input:checked+.slider:before{transform:translateX(22px);}
             <div class="apk-sub">Lebih ringan dan bisa dipakai tanpa internet. Aplikasi akan memberi tahu kalau ada versi baru.</div>
           </div>
         </div>
+<<<<<<< HEAD
         <div class="apk-meta"></div>
         <a class="apk-btn" href="https://github.com/yi-katabba/SKD-CPNS/releases/latest/download/SKD-CPNS.apk" rel="noopener" onclick="playSound('menu')">⬇️ Unduh APK Terbaru</a>
+=======
+        <div class="apk-meta" id="apkMeta"></div>
+        <a class="apk-btn" id="apkBtn" href="https://github.com/yi-katabba/SKD-CPNS/releases/latest/download/SKD-CPNS.apk" rel="noopener" onclick="playSound('menu')">⬇️ Unduh APK Terbaru</a>
+>>>>>>> 2c0a35f7ab724062837633b1b33d04492427d1c3
         <div class="apk-note">Tautan selalu mengarah ke versi terbaru. Setelah diunduh, buka file APK lalu izinkan "Instal dari sumber ini" bila diminta. Progres di web dan aplikasi terpisah: pindahkan lewat <b>Backup &amp; Pulihkan Progres</b>.</div>
       </div>
 
@@ -2947,6 +2971,7 @@ input:checked+.slider:before{transform:translateX(22px);}
         <p class="ix-text">Dirancang untuk membantu calon peserta CPNS mempersiapkan diri menghadapi Seleksi Kompetensi Dasar (SKD) dengan berlatih soal TWK, TIU, dan TKP secara mandiri, efektif, dan terarah.</p>
       </div>
 
+<<<<<<< HEAD
       <div class="apk-card">
         <div class="apk-top">
           <div class="apk-ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/><path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/></svg></div>
@@ -2994,6 +3019,27 @@ input:checked+.slider:before{transform:translateX(22px);}
         <div class="ix-foot"><span>Total <strong>110 soal</strong></span><span>Skor maksimal <strong>550</strong></span></div>
       </div>
 
+=======
+      <div class="ix-section">Passing Grade</div>
+      <div class="ix-card">
+        <div class="ix-stats three">
+          <div class="ix-stat twk"><b>65</b><span>TWK</span></div>
+          <div class="ix-stat tiu"><b>80</b><span>TIU</span></div>
+          <div class="ix-stat tkp"><b>166</b><span>TKP</span></div>
+        </div>
+      </div>
+
+      <div class="ix-section">Komposisi Soal</div>
+      <div class="ix-card">
+        <div class="ix-stats three">
+          <div class="ix-stat twk"><b>30</b><span>Soal TWK</span></div>
+          <div class="ix-stat tiu"><b>35</b><span>Soal TIU</span></div>
+          <div class="ix-stat tkp"><b>45</b><span>Soal TKP</span></div>
+        </div>
+        <div class="ix-foot"><span>Total <strong>110 soal</strong></span><span>Skor maksimal <strong>550</strong></span></div>
+      </div>
+
+>>>>>>> 2c0a35f7ab724062837633b1b33d04492427d1c3
       <div class="ix-section">Fitur Unggulan</div>
       <div class="ix-card ix-list">
         <div class="ix-li"><span class="ix-dot">✓</span><span>Pengacakan pilihan jawaban setiap soal dibuka</span></div>
@@ -4159,7 +4205,10 @@ function goTo(pageId){
   if(pageId==='akunPage')refreshAkunPage();
   if(pageId==='pengaturanPage')syncSoundToggle();
   if(pageId==='backupPage')refreshBackupInfo();
+<<<<<<< HEAD
   if(pageId==='tentangPage'){renderUpd_();updAuto_();muatInfoApk_();}
+=======
+>>>>>>> 2c0a35f7ab724062837633b1b33d04492427d1c3
   history.pushState({page:pageId},'','');
 }
 
@@ -4231,6 +4280,7 @@ function tampilToastKeluar_(){
   });
 })();
 
+<<<<<<< HEAD
 // ========== PEMBARUAN APLIKASI (GitHub Releases, hanya di APK) ==========
 // Menu: Tentang Aplikasi > Pembaruan (periksa manual, periksa otomatis maks. sekali sehari, lewati versi, batalkan unduhan).
 // Banner di atas layar muncul saat pemeriksaan otomatis menemukan versi baru. Tanpa internet = dilewati diam-diam.
@@ -4380,6 +4430,52 @@ function updAuto_(){
   }catch(e){}
 }
 setTimeout(updAuto_, 3000);
+=======
+// ========== CEK UPDATE APLIKASI (online, opsional) ==========
+// Saat ada internet, cek rilis terbaru di GitHub Releases. Kalau nomor build lebih
+// baru dari yang terpasang, tampilkan banner "Update tersedia". Tanpa internet =
+// dilewati diam-diam, aplikasi tetap jalan normal.
+async function cekUpdateAplikasi_(){
+  try{
+    if(typeof APP_BUILD==='undefined' || !APP_BUILD || !adaInternet_()) return;
+    const res = await fetchDenganTimeout_('https://api.github.com/repos/'+APP_REPO+'/releases/latest', {headers:{'Accept':'application/vnd.github+json'}}, 8000);
+    if(!res.ok) return;
+    const rel = await res.json();
+    const m = /build-(\d+)/.exec(rel.tag_name||'');
+    if(!m || parseInt(m[1],10) <= APP_BUILD) return;
+    const apk = (rel.assets||[]).find(a=>/\.apk$/i.test(a.name));
+    const url = apk ? apk.browser_download_url : rel.html_url;
+    if(document.getElementById('updateBanner')) return;
+    const b = document.createElement('div');
+    b.id = 'updateBanner';
+    b.style.cssText = 'position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:99999;background:#1e3a8a;color:#fff;border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:center;box-shadow:0 6px 24px rgba(0,0,0,.35);font:600 14px system-ui,sans-serif;';
+    b.innerHTML = '<span id="updTxt" style="flex:1">🔔 Update tersedia (versi '+m[1]+'). Progres kamu tetap aman.</span>'
+      + '<button id="updBtn" style="background:#fbbf24;color:#1e3a8a;border:0;border-radius:10px;padding:8px 12px;font-weight:700">Unduh</button>'
+      + '<button id="updClose" style="background:transparent;color:#fff;border:0;font-size:18px">✕</button>';
+    document.body.appendChild(b);
+    const teks = b.firstChild, btn = document.getElementById('updBtn');
+    document.getElementById('updClose').onclick = ()=>b.remove();
+    btn.onclick = ()=>{
+      // APK: unduh & pasang langsung dari dalam aplikasi. Selain itu (browser / APK lama): buka tautan.
+      if(!apk || !window.SkdUpdater || typeof window.SkdUpdater.downloadAndInstall!=='function'){ window.open(url,'_blank'); return; }
+      const awal = '🔔 Update tersedia (versi '+m[1]+'). Progres kamu tetap aman.';
+      const reset = (pesan)=>{ teks.textContent = pesan||awal; btn.disabled=false; btn.textContent='Perbarui'; };
+      window.__skdUpdProgress = (p)=>{ teks.textContent = '⬇️ Mengunduh update… '+p+'%'; };
+      window.__skdUpdDone = (st)=>{
+        if(st==='OK'){ teks.textContent = '✅ Unduhan selesai. Tekan "Pasang" pada layar Android.'; btn.disabled=false; btn.textContent='Ulangi'; }
+        else{ reset('⚠️ Gagal mengunduh ('+st+'). Cek internet lalu coba lagi.'); }
+      };
+      let r; try{ r = String(window.SkdUpdater.downloadAndInstall(url)); }catch(e){ r='ERR:'+(e&&e.name||'bridge'); }
+      if(r==='START'){ btn.disabled=true; btn.textContent='…'; teks.textContent='⬇️ Mengunduh update… 0%'; }
+      else if(r==='NEED_PERMISSION'){ reset('Izinkan "Pasang aplikasi dari sumber ini" untuk aplikasi ini di pengaturan, lalu kembali dan tekan Perbarui.'); }
+      else if(r==='BUSY'){ /* sudah berjalan */ }
+      else{ window.open(url,'_blank'); reset(); }
+    };
+    btn.textContent = (apk && window.SkdUpdater) ? 'Perbarui' : 'Unduh';
+  }catch(e){}
+}
+setTimeout(cekUpdateAplikasi_, 3000);
+>>>>>>> 2c0a35f7ab724062837633b1b33d04492427d1c3
 
 // Ambang kelulusan SKD. Harus dideklarasikan SEBELUM initApp() karena refreshHomeStats()
 // -> getBadgeStats() memakainya saat aplikasi dibuka ulang (kalau tidak: ReferenceError/TDZ).
@@ -4521,11 +4617,19 @@ const APK_REPO_WEB = 'yi-katabba/SKD-CPNS';
 function isNativeApp_(){ try{ return !!(window.Capacitor && Capacitor.isNativePlatform && Capacitor.isNativePlatform()); }catch(e){ return false; } }
 let _apkInfoMuat = 0;
 async function muatInfoApk_(){
+<<<<<<< HEAD
   const cards = document.querySelectorAll('.apk-card');
   const keluar = document.getElementById('btnKeluarApp');
   if(isNativeApp_()){ if(keluar) keluar.style.display=''; return; }   // di APK: tombol keluar tampil, kartu unduh tidak
   if(!cards.length) return;
   cards.forEach(c=>c.classList.add('show'));
+=======
+  const card = document.getElementById('apkCard');
+  const keluar = document.getElementById('btnKeluarApp');
+  if(isNativeApp_()){ if(keluar) keluar.style.display=''; return; }   // di APK: tombol keluar tampil, kartu unduh tidak
+  if(!card) return;
+  card.classList.add('show');
+>>>>>>> 2c0a35f7ab724062837633b1b33d04492427d1c3
   if(Date.now() - _apkInfoMuat < 600000) return;   // cukup sekali per 10 menit
   _apkInfoMuat = Date.now();
   try{
@@ -4539,9 +4643,14 @@ async function muatInfoApk_(){
     if(m) chips.push('Versi '+m[1]);
     chips.push((apk.size/1048576).toFixed(1)+' MB');
     if(rel.published_at) chips.push(new Date(rel.published_at).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}));
+<<<<<<< HEAD
     const html = chips.map(c=>'<span class="apk-chip">'+c+'</span>').join('');
     document.querySelectorAll('.apk-meta').forEach(e=>e.innerHTML=html);
     document.querySelectorAll('.apk-btn').forEach(a=>a.href=apk.browser_download_url);
+=======
+    document.getElementById('apkMeta').innerHTML = chips.map(c=>'<span class="apk-chip">'+c+'</span>').join('');
+    document.getElementById('apkBtn').href = apk.browser_download_url;
+>>>>>>> 2c0a35f7ab724062837633b1b33d04492427d1c3
   }catch(e){ _apkInfoMuat = 0; }
 }
 function refreshAkunPage(){
