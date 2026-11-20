@@ -2619,6 +2619,172 @@ input:checked+.slider:before{transform:translateX(22px);}
  .hw-ill-l{height:112px;width:140px;left:5px}.hw-ill-r{width:210px;opacity:.55}
  .hw-hero-txt{margin-left:135px}
 }
+
+
+/* =====================================================================
+   MATERI — TAMPILAN WEB (layar >= 900px): daftar kategori & isi materi
+   HP tidak berubah: semua elemen tambahan disembunyikan di bawah ini.
+   ===================================================================== */
+.mw-crumb,.mw-banner,.mw-cardhead,.mt-catatan,.qg-d{display:none;}
+@media (min-width:900px){
+  /* kanvas halaman */
+  #materiPage .mw-hdr,#materiContentPage .mw-hdr,#materiPage .mw-sp,#materiContentPage .mw-sp{display:none !important;}
+  #materiPage,#materiContentPage{max-width:none !important;}
+  #materiPage .mw-page,#materiContentPage .mw-page{
+    position:relative;overflow:hidden;min-height:calc(100vh - var(--top-h)) !important;padding-bottom:70px !important;
+    background:linear-gradient(180deg,#EEF2FD 0%,#E7ECFB 100%) !important;
+  }
+  #materiPage .mw-page::after,#materiContentPage .mw-page::after{
+    content:'';position:absolute;left:0;right:0;bottom:0;height:240px;pointer-events:none;z-index:0;
+    background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 260' preserveAspectRatio='none'%3E%0A%3Cpath d='M0 150C150 90 300 120 450 170S780 250 1200 120V260H0Z' fill='white' fill-opacity='.45'/%3E%0A%3Cpath d='M0 200C200 150 380 210 620 225S1000 170 1200 205V260H0Z' fill='white' fill-opacity='.55'/%3E%0A%3C/svg%3E") center bottom/100% 100% no-repeat;
+  }
+  #materiPage .mw-body,#materiContentPage .mw-body{position:relative;z-index:1;max-width:1252px;margin:0 auto;padding:22px 36px 20px !important;}
+  #materiContentPage .mw-body{padding-top:0 !important;}
+
+  /* breadcrumb */
+  .mw-crumb{
+    display:flex;align-items:center;gap:12px;height:50px;padding:0 22px;margin:0 0 18px;
+    background:#fff;border:1px solid #E6EBF8;border-radius:18px;font-size:15px;font-weight:800;color:#1E1B4B;
+    box-shadow:0 12px 26px -18px rgba(76,29,149,.45);
+  }
+  .mw-crumb .mw-home{display:flex;color:#5B3FD0;cursor:pointer;}
+  .mw-crumb .mw-home svg{width:18px;height:18px;}
+  .mw-crumb .mw-sep{color:#8B93B5;flex-shrink:0;}
+  .mw-crumb .mw-lnk{cursor:pointer;color:#1E1B4B;} .mw-crumb .mw-lnk:hover{text-decoration:underline;}
+  .mw-crumb-c{position:relative;z-index:1;width:calc(100% - 72px);max-width:1180px;margin:22px auto 16px;box-sizing:border-box;}
+
+  /* warna per kategori (halaman isi) */
+  #materiContentPage[data-cat="twk"]{--ac:#6D28D9;--ac-l:#A78BFA;--ac-bg:#F3EEFF;}
+  #materiContentPage[data-cat="tiu"]{--ac:#EA580C;--ac-l:#FDBA74;--ac-bg:#FFF2E8;}
+  #materiContentPage[data-cat="tkp"]{--ac:#15803D;--ac-l:#86EFAC;--ac-bg:#EAF8F0;}
+  .mw-banner[data-cat="twk"]{--b1:#6A32D4;--b2:#9A5CF2;}
+  .mw-banner[data-cat="tiu"]{--b1:#E2540A;--b2:#FB923C;}
+  .mw-banner[data-cat="tkp"]{--b1:#0E8F50;--b2:#3CC784;}
+
+  /* banner */
+  .mw-banner{
+    position:relative;overflow:hidden;display:flex;align-items:center;gap:24px;height:132px;padding:0 36px;margin:0 0 22px;
+    border-radius:26px;color:#fff;--b1:#6A32D4;--b2:#9A5CF2;
+    background:radial-gradient(120% 160% at 0% 0%,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 55%),linear-gradient(100deg,var(--b1) 0%,var(--b2) 100%);
+    box-shadow:0 26px 44px -24px var(--b1),inset 0 1px 0 rgba(255,255,255,.28);
+  }
+  #materiPage .mw-banner{height:156px;}
+  .mw-banner::after{content:'';position:absolute;inset:0;pointer-events:none;background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 160' preserveAspectRatio='xMaxYMax meet'%3E%0A%3Cg fill='rgba(255,255,255,0.17)'%3E%0A%3Crect x='196' y='132' width='84' height='28'/%3E%3Crect x='206' y='114' width='64' height='18'/%3E%3Crect x='216' y='96' width='44' height='18'/%3E%3Cpath d='M226 96h24l-12-40z'/%3E%3Crect x='214' y='146' width='10' height='14' fill='rgba(255,255,255,0.1)'/%3E%0A%3Crect x='300' y='136' width='96' height='24'/%3E%3Crect x='314' y='124' width='68' height='12'/%3E%0A%3Cpath d='M341 124l5-84h6l5 84z'/%3E%3Crect x='338' y='30' width='24' height='10' rx='3'/%3E%3Cpath d='M350 4c7 11 9 17 0 26-9-9-7-15 0-26z'/%3E%0A%3Crect x='410' y='108' width='22' height='52'/%3E%3Crect x='436' y='90' width='20' height='70'/%3E%3Crect x='460' y='116' width='28' height='44'/%3E%3Cpath d='M410 108l11-14 11 14z'/%3E%0A%3Ccircle cx='160' cy='140' r='18'/%3E%3Ccircle cx='520' cy='136' r='20'/%3E%3Crect x='156' y='150' width='8' height='10'/%3E%3Crect x='516' y='148' width='8' height='12'/%3E%0A%3C/g%3E%0A%3Cpath d='M330 160C400 152 470 128 560 62V96C490 142 420 160 360 164Z' fill='%23E11D48' fill-opacity='.95'/%3E%0A%3Cpath d='M372 164C440 158 500 138 560 98V128C520 150 470 164 420 168Z' fill='white' fill-opacity='.96'/%3E%0A%3C/svg%3E") right bottom/auto 100% no-repeat;}
+  .mw-bicon{
+    position:relative;z-index:1;flex-shrink:0;display:flex;align-items:center;justify-content:center;width:80px;height:80px;border-radius:22px;
+    background:linear-gradient(145deg,rgba(255,255,255,.34),rgba(255,255,255,.12));border:1px solid rgba(255,255,255,.34);
+    box-shadow:0 16px 26px -12px rgba(30,10,90,.55),inset 0 1px 0 rgba(255,255,255,.4);
+  }
+  .mw-bicon svg{width:40px;height:40px;color:#fff;filter:drop-shadow(0 2px 4px rgba(0,0,0,.18));}
+  .mw-btxt{position:relative;z-index:1;display:flex;flex-direction:column;gap:4px;}
+  .mw-btxt small{font-size:16px;font-weight:600;opacity:.95;letter-spacing:.2px;}
+  .mw-btxt b{font-size:38px;line-height:1.1;font-weight:800;letter-spacing:-.6px;text-shadow:0 2px 10px rgba(30,10,90,.25);}
+  .mw-btxt span{font-size:14.5px;font-weight:500;opacity:.95;margin-top:2px;}
+
+  /* ====== DAFTAR KATEGORI ====== */
+  #materiPage .ix-section{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:800;color:#1E1B4B;padding:8px 2px 16px;}
+  #materiPage .ix-section::before{content:'';width:5px;height:26px;border-radius:5px;background:linear-gradient(180deg,#8B5CF6,#5B21B6);}
+  #materiPage .materi-cats{display:flex;flex-direction:column;gap:20px;}
+  #materiPage .materi-cat-card{
+    --btn:#5B21B6;--dec:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 120'%3E%3Cg fill='rgba(109,40,217,0.07)'%3E%3Cpath d='M10 70c14-14 30-16 44-8 10-8 26-8 36 2 14-6 24 2 30 10-14 10-28 8-40 4-12 10-30 12-46 4-12 2-20-2-24-12z'/%3E%3Cpath d='M130 40c10-12 28-14 40-6 14-8 34-6 44 6 8 12 0 20-14 18-8 8-24 8-32 0-14 4-30-2-38-18z'/%3E%3Cpath d='M236 80c14-6 30-2 40 8-8 14-26 18-40 10-6-6-6-12 0-18z'/%3E%3C/g%3E%3C/svg%3E");
+    position:relative;display:grid !important;grid-template-columns:92px minmax(0,1fr) auto;grid-template-rows:auto auto;align-content:center;
+    column-gap:28px;row-gap:4px;align-items:center;min-height:136px;margin:0;padding:22px 32px 22px 28px;cursor:pointer;
+    background:none right center/auto 100% no-repeat,linear-gradient(100deg,#fff 0%,var(--ac-bg) 100%);
+    border:1px solid color-mix(in srgb,var(--ac) 14%,#fff);border-left:6px solid var(--ac);border-radius:24px;
+    box-shadow:0 22px 38px -26px var(--ac);transition:transform .18s,box-shadow .18s;
+  }
+  #materiPage .materi-cat-card:hover{transform:translateY(-3px);box-shadow:0 28px 44px -26px var(--ac);}
+  #materiPage .materi-cat-card.twk{--ac:#6D28D9;--ac-l:#A78BFA;--ac-bg:#F1EAFF;--btn:#5B21B6;}
+  #materiPage .materi-cat-card.tiu{--ac:#EA580C;--ac-l:#FDBA74;--ac-bg:#FFEFE2;--btn:#F97316;--dec:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg fill='rgba(249,115,22,0.10)'%3E%3Ccircle cx='60' cy='46' r='34'/%3E%3Crect x='44' y='84' width='32' height='10' rx='4'/%3E%3Crect x='48' y='98' width='24' height='9' rx='4'/%3E%3C/g%3E%3C/svg%3E");}
+  #materiPage .materi-cat-card.tkp{--ac:#15803D;--ac-l:#86EFAC;--ac-bg:#E6F7EE;--btn:#16A34A;--dec:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 80'%3E%3Cg fill='rgba(22,163,74,0.13)'%3E%3Ccircle cx='60' cy='22' r='13'/%3E%3Cpath d='M36 70c0-16 10-26 24-26s24 10 24 26z'/%3E%3Ccircle cx='26' cy='34' r='10'/%3E%3Cpath d='M6 70c0-13 7-21 20-21 5 0 8 1 11 3-6 6-9 11-10 18z'/%3E%3Ccircle cx='94' cy='34' r='10'/%3E%3Cpath d='M114 70c0-13-7-21-20-21-5 0-8 1-11 3 6 6 9 11 10 18z'/%3E%3C/g%3E%3C/svg%3E");}
+  #materiPage .materi-cat-card.twk,#materiPage .materi-cat-card.tiu,#materiPage .materi-cat-card.tkp{
+    background:var(--dec) right 150px center/auto 80% no-repeat,linear-gradient(100deg,#fff 0%,var(--ac-bg) 100%);
+  }
+  #materiPage .mcc-head,#materiPage .mcc-foot{display:contents;}
+  #materiPage .mc-icon{
+    grid-column:1;grid-row:1 / span 2;width:86px;height:86px;border-radius:24px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(140deg,var(--ac-l) -30%,var(--ac) 70%);
+    box-shadow:0 18px 26px -12px var(--ac),inset 0 1px 0 rgba(255,255,255,.35);
+  }
+  #materiPage .mc-icon svg{display:none;}
+  #materiPage .mc-icon::after{content:'';width:46px;height:46px;background:#fff;-webkit-mask:var(--ico) center/contain no-repeat;mask:var(--ico) center/contain no-repeat;filter:drop-shadow(0 2px 3px rgba(0,0,0,.18));}
+  #materiPage .materi-cat-card.twk .mc-icon{--ico:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linejoin='round' stroke-linecap='round'%3E%3Cg transform='rotate(45 12 12)'%3E%3Crect x='9.6' y='2' width='4.8' height='14.5' rx='1.2'/%3E%3Cpath d='M9.6 16.5l2.4 5 2.4-5z'/%3E%3C/g%3E%3Cg transform='rotate(-45 12 12)'%3E%3Crect x='9.2' y='2' width='5.6' height='20' rx='1.2'/%3E%3Cpath d='M9.2 6.2h2.6M9.2 10.2h2.6M9.2 14.2h2.6M9.2 18.2h2.6'/%3E%3C/g%3E%3C/svg%3E");}
+  #materiPage .materi-cat-card.tiu .mc-icon{--ico:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M9 18h6M10 21h4M12 2a6.5 6.5 0 0 0-3.7 11.8c.5.4.7.9.7 1.5V16h6v-.7c0-.6.2-1.1.7-1.5A6.5 6.5 0 0 0 12 2z'/%3E%3Cpath d='M12 7v4.5M10 9.5l2 2 2-2'/%3E%3C/svg%3E");}
+  #materiPage .materi-cat-card.tkp .mc-icon{--ico:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.9' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12 4v16M7 20.5h10M4 7.5h16'/%3E%3Ccircle cx='12' cy='4' r='1.3'/%3E%3Cpath d='M4 7.5L1.6 14.5h4.8zM20 7.5l-2.4 7h4.8z'/%3E%3Cpath d='M1.6 14.5a2.4 2.1 0 0 0 4.8 0M17.6 14.5a2.4 2.1 0 0 0 4.8 0'/%3E%3C/svg%3E");}
+  #materiPage .mcc-title{grid-column:2;grid-row:1;align-self:end;gap:2px;}
+  #materiPage .mcc-title b{font-size:28px;font-weight:800;letter-spacing:-.4px;color:#1E1B4B;line-height:1.15;}
+  #materiPage .mcc-title small{font-size:17px;font-weight:600;color:#1F2A5A;}
+  #materiPage .mcc-pill{display:none;}
+  #materiPage .mcc-foot > span:first-child{grid-column:2;grid-row:2;align-self:start;font-size:14.5px;font-weight:500;color:#5B6478;}
+  #materiPage .mcc-foot{border:none;padding:0;}
+  #materiPage .mcc-foot .qci-go{
+    color:#fff;grid-column:3;grid-row:1 / span 2;position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    height:50px;padding:0 30px;border-radius:26px;background:var(--btn);color:#fff;font-size:15.5px;font-weight:800;white-space:nowrap;
+    box-shadow:0 16px 24px -12px var(--btn),inset 0 1px 0 rgba(255,255,255,.25);transition:filter .15s,transform .15s;
+  }
+  #materiPage .materi-cat-card:hover .mcc-foot .qci-go{filter:brightness(1.08);transform:translateX(2px);}
+  #materiPage .qg-m{display:none;} #materiPage .qg-d{display:inline-flex;align-items:center;gap:10px;}
+
+  /* ====== HALAMAN ISI MATERI ====== */
+  body #materiTabsBar{
+    position:relative !important;top:auto !important;left:auto !important;transform:none !important;
+    height:68px;width:calc(100% - 72px) !important;max-width:1180px !important;margin:0 auto 22px;box-sizing:border-box;padding:0 14px;z-index:1;border:1px solid #E6EBF8;border-radius:20px;background:#fff;
+    box-shadow:0 12px 26px -18px rgba(76,29,149,.45);
+  }
+  #materiTabsSpacer{display:none !important;}
+  #materiContentPage .mt-arrow{flex:0 0 36px;width:36px;height:36px;border-radius:50%;font-size:24px;color:var(--ac);background:var(--ac-bg);transition:background .15s;}
+  #materiContentPage .mt-arrow:hover:not(:disabled){background:color-mix(in srgb,var(--ac) 18%,#fff);}
+  #materiContentPage .mt-scroller{gap:10px;padding:10px 8px;}
+  #materiContentPage .mt-tab{
+    height:42px;padding:0 18px 0 7px;border-radius:22px;font-size:13.5px;font-weight:700;gap:9px;
+    background:var(--ac-bg);border:1px solid color-mix(in srgb,var(--ac) 16%,#fff);color:var(--ac);
+  }
+  #materiContentPage .mt-tab:hover:not(.active){background:color-mix(in srgb,var(--ac) 12%,#fff);}
+  #materiContentPage .mt-tab .mt-no{width:28px;height:28px;font-size:13px;background:color-mix(in srgb,var(--ac) 16%,#fff);color:var(--ac);}
+  #materiContentPage .mt-tab.active{
+    color:#fff;border-color:transparent;background:linear-gradient(100deg,var(--ac) 0%,var(--ac-l) 160%);
+    box-shadow:0 14px 22px -10px var(--ac);
+  }
+  #materiContentPage .mt-tab.active .mt-no{background:rgba(255,255,255,.26);color:#fff;}
+
+  .mw-card{
+    position:relative;padding:28px 32px 32px;border-radius:26px;
+    background:linear-gradient(180deg,#fff 0%,color-mix(in srgb,var(--ac-bg) 55%,#fff) 100%);
+    border:1px solid color-mix(in srgb,var(--ac) 14%,#fff);
+    box-shadow:0 28px 48px -30px var(--ac);
+  }
+  .mw-cardhead{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;padding:8px 10px 8px 22px;margin:0 0 24px;
+    border-radius:16px;background:linear-gradient(90deg,color-mix(in srgb,var(--ac-bg) 90%,#fff),#fff);
+    border:1px solid color-mix(in srgb,var(--ac) 16%,#fff);
+  }
+  .mw-cardhead h3{margin:0;font-size:19px;font-weight:800;color:var(--ac);line-height:1.35;}
+  .mw-back{
+    display:inline-flex;align-items:center;gap:8px;flex-shrink:0;height:36px;padding:0 18px;border-radius:18px;cursor:pointer;
+    background:#fff;border:1.5px solid color-mix(in srgb,var(--ac) 45%,#fff);color:var(--ac);font-family:inherit;font-size:13.5px;font-weight:800;
+    transition:background .15s;
+  }
+  .mw-back:hover{background:var(--ac-bg);}
+  #materiContentPage .materi-full{
+    max-width:none;margin:0;padding:0;background:transparent;border:none;box-shadow:none;border-radius:0;
+    font-size:calc(15.5px * var(--fs-scale-umum));line-height:1.85;color:#1F2937;
+  }
+  #materiContentPage .materi-full .mw-first,#materiContentPage .materi-full .mt-tema-head{display:none;}
+  #materiContentPage .materi-full .mt-tema-head + p{font-size:inherit;color:inherit;padding:0;border-left:none;margin-bottom:12px;}
+  #materiContentPage .materi-full > h3:first-of-type:not(.mw-first){margin-top:4px;}
+  .mt-catatan{
+    display:flex;align-items:center;gap:18px;margin:30px 0 4px;padding:18px 24px;border-radius:18px;
+    background:linear-gradient(90deg,color-mix(in srgb,var(--ac) 14%,#fff),color-mix(in srgb,var(--ac-bg) 70%,#fff));
+    border:1px solid color-mix(in srgb,var(--ac) 14%,#fff);
+  }
+  .mt-cat-ic{display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;flex-shrink:0;color:#fff;
+    background:linear-gradient(140deg,var(--ac-l) -40%,var(--ac) 80%);box-shadow:0 12px 18px -8px var(--ac);}
+  .mt-cat-ic svg{width:24px;height:24px;}
+  .mt-cat-ic svg,.mt-cat-ic svg path{fill:#fff !important;color:#fff;}
+  .mt-catatan b{display:block;font-size:16.5px;font-weight:800;color:var(--ac);}
+  .mt-catatan span{font-size:14.5px;color:#4B5563;font-weight:500;}
+  #materiContentPage .materi-nav-bottom{margin-top:18px;}
+}
 </style>
 </head>
 <body>
@@ -3314,32 +3480,37 @@ input:checked+.slider:before{transform:translateX(22px);}
 
 <!-- =========== MATERI =========== -->
 <div id="materiPage" class="page">
-  <div style="background:var(--bg);min-height:100vh;padding-bottom:80px;">
+  <div class="mw-page" style="background:var(--bg);min-height:100vh;padding-bottom:80px;">
     
     <!-- HEADER FIXED -->
-    <div style="position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:50;background:#fff;display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.05);">
+    <div class="mw-hdr" style="position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:50;background:#fff;display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.05);">
       <button class="btn-back" data-icon="icon_back" onclick="playSound('back');goTo('homePage')"></button>
       <h2 style="font-size:17px;font-weight:800;color:var(--dark);flex:1;margin:0;"><span data-icon="icon_menu_materi" class="ic-sm"></span> Materi SKD</h2>
     </div>
     
     <!-- SPACER -->
-    <div style="height:54px;"></div>
+    <div class="mw-sp" style="height:54px;"></div>
     
     <!-- KONTEN -->
-    <div style="padding:16px;">
+    <div class="mw-body" style="padding:16px;">
+      <nav class="mw-crumb" aria-label="Breadcrumb"><a class="mw-home" onclick="playSound('back');goTo('homePage')" aria-label="Home"><svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/></svg></a><svg class="mw-sep" viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg><span class="mw-cur">Materi</span></nav>
+      <div class="mw-banner" data-cat="twk">
+        <span class="mw-bicon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/></svg></span>
+        <div class="mw-btxt"><small>Kategori Materi</small><b>Materi SKD</b><span>Pelajari materi untuk menghadapi Seleksi Kompetensi Dasar (SKD)</span></div>
+      </div>
       <div class="ix-section">Pilih Kategori Materi</div>
       <div class="materi-cats">
         <div class="materi-cat-card twk" onclick="playSound('menu');showMateri('twk')">
           <div class="mcc-head"><span class="mc-icon" data-icon="icon_twkm"></span><span class="mcc-title"><b>TWK</b><small>Tes Wawasan Kebangsaan</small></span><span class="status-pill mcc-pill">Materi</span></div>
-          <div class="mcc-foot"><span>Nasionalisme, Pancasila, UUD 1945, dan lainnya</span><span class="qci-go">Baca ›</span></div>
+          <div class="mcc-foot"><span>Nasionalisme, Pancasila, UUD 1945, dan lainnya</span><span class="qci-go"><span class="qg-m">Baca ›</span><span class="qg-d">Akses Materi <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg></span></span></div>
         </div>
         <div class="materi-cat-card tiu" onclick="playSound('menu');showMateri('tiu')">
           <div class="mcc-head"><span class="mc-icon" data-icon="icon_tium"></span><span class="mcc-title"><b>TIU</b><small>Tes Intelegensi Umum</small></span><span class="status-pill mcc-pill">Materi</span></div>
-          <div class="mcc-foot"><span>Verbal, numerik, dan figural</span><span class="qci-go">Baca ›</span></div>
+          <div class="mcc-foot"><span>Verbal, numerik, dan figural</span><span class="qci-go"><span class="qg-m">Baca ›</span><span class="qg-d">Akses Materi <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg></span></span></div>
         </div>
         <div class="materi-cat-card tkp" onclick="playSound('menu');showMateri('tkp')">
           <div class="mcc-head"><span class="mc-icon" data-icon="icon_tkpm"></span><span class="mcc-title"><b>TKP</b><small>Tes Karakteristik Pribadi</small></span><span class="status-pill mcc-pill">Materi</span></div>
-          <div class="mcc-foot"><span>Pelayanan publik, jejaring kerja, integritas</span><span class="qci-go">Baca ›</span></div>
+          <div class="mcc-foot"><span>Pelayanan publik, jejaring kerja, integritas</span><span class="qci-go"><span class="qg-m">Baca ›</span><span class="qg-d">Akses Materi <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg></span></span></div>
         </div>
       </div>
     </div>
@@ -3348,14 +3519,17 @@ input:checked+.slider:before{transform:translateX(22px);}
 </div>
 
 <div id="materiContentPage" class="page">
-  <div style="background:var(--bg);min-height:100vh;padding-bottom:80px;">
+  <div class="mw-page" style="background:var(--bg);min-height:100vh;padding-bottom:80px;">
     
     <!-- HEADER FIXED -->
-    <div style="position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:50;background:#fff;display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.05);">
+    <div class="mw-hdr" style="position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:50;background:#fff;display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.05);">
       <button class="btn-back" data-icon="icon_back" onclick="playSound('back');goTo('materiPage')"></button>
       <h2 style="font-size:17px;font-weight:800;color:var(--dark);flex:1;margin:0;" id="materiContentTitle"><span data-icon="icon_menu_materi" class="ic-sm"></span> Materi</h2>
     </div>
     
+    <!-- BREADCRUMB (web) -->
+    <nav class="mw-crumb mw-crumb-c" id="mwCrumb" aria-label="Breadcrumb"><a class="mw-home" onclick="playSound('back');goTo('homePage')" aria-label="Home"><svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/></svg></a><svg class="mw-sep" viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg><a class="mw-lnk" onclick="playSound('back');goTo('materiPage')">Materi</a><svg class="mw-sep" viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg><span id="mwCrumbCat">TWK</span><svg class="mw-sep" viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/></svg><span class="mw-cur" id="mwCrumbCur">Tes Wawasan Kebangsaan</span></nav>
+
     <!-- TAB KATEGORI (slider, hanya tampil jika materi punya banyak kategori) -->
     <div id="materiTabsBar" role="tablist" aria-label="Kategori materi">
       <button type="button" class="mt-arrow" id="materiTabPrev" aria-label="Geser ke kiri" onclick="scrollMateriTabs(-1)">&#8249;</button>
@@ -3364,12 +3538,19 @@ input:checked+.slider:before{transform:translateX(22px);}
     </div>
     
     <!-- SPACER -->
-    <div style="height:54px;"></div>
+    <div class="mw-sp" style="height:54px;"></div>
     <div id="materiTabsSpacer" style="height:54px;display:none;"></div>
     
     <!-- KONTEN SCROLL -->
-    <div style="padding:16px;">
-      <div id="materiContentFull" class="materi-full"></div>
+    <div class="mw-body" style="padding:16px;">
+      <div class="mw-banner" id="mwBanner" data-cat="twk">
+        <span class="mw-bicon" id="mwBannerIcon"></span>
+        <div class="mw-btxt"><small id="mwBannerCat">TWK</small><b id="mwBannerTitle">Materi</b></div>
+      </div>
+      <div class="mw-card">
+        <div class="mw-cardhead"><h3 id="mwCardTitle"></h3><button type="button" class="mw-back" onclick="playSound('back');goTo('materiPage')"><svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/></svg> Kembali ke Materi</button></div>
+        <div id="materiContentFull" class="materi-full"></div>
+      </div>
     </div>
     
   </div>
@@ -5590,6 +5771,45 @@ function materiNavBottom(k){
   }
   return nav + '</div>';
 }
+
+// ---- Tampilan web: banner, breadcrumb & judul kartu halaman isi materi ----
+var MW_ICON={
+  twk:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.5 2.5h2v19h-2z"/><path d="M7.5 3.5h12.5l-3.2 4.6 3.2 4.6H7.5z"/></svg>',
+  tiu:'<svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5"/></svg>',
+  tkp:'<svg viewBox="0 0 16 16" fill="currentColor"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/></svg>'
+};
+function materiCatatan(){
+  return '<div class="mt-catatan"><span class="mt-cat-ic"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/></svg></span><div><b>Catatan</b><span>Pelajari materi ini dengan seksama sebagai bekal menghadapi SKD.</span></div></div>';
+}
+function mwTitleCase(t){
+  if(!t||t!==t.toUpperCase()||t===t.toLowerCase())return t;
+  var keep={UUD:1,NKRI:1,RI:1,TWK:1,TIU:1,TKP:1,BPUPKI:1,PPKI:1,SKD:1,CPNS:1,UU:1,MPR:1,DPR:1,DPD:1,TNI:1,POLRI:1,ASN:1,PNS:1,KBBI:1,HAM:1,MK:1,MA:1,KY:1,BPK:1,PBB:1,ASEAN:1,TIK:1};
+  var small={DAN:1,DI:1,KE:1,DARI:1,YANG:1,ATAU:1,UNTUK:1,DALAM:1,PADA:1,DENGAN:1,DAN:1};
+  return t.split(/(\s+)/).map(function(w,i){
+    var core=w.replace(/[^A-Za-z]/g,'');
+    if(!core||/^\s+$/.test(w))return w;
+    if(keep[core])return w;
+    if(i>0&&small[core])return w.toLowerCase();
+    return w.charAt(0)+w.slice(1).toLowerCase();
+  }).join('');
+}
+function mwSyncChrome(k,m,tabNama){
+  try{
+    var parts=String(m.judul||'').split(/\s+[—–-]\s+/);
+    var code=(parts[0]||k).trim(), full=(parts[1]||'').trim();
+    var set=function(id,t){var e=document.getElementById(id);if(e)e.textContent=t;};
+    set('mwCrumbCat',code);set('mwCrumbCur',full);
+    set('mwBannerCat',code);set('mwBannerTitle',tabNama||full||code);
+    var ban=document.getElementById('mwBanner');if(ban)ban.dataset.cat=k;
+    var ic=document.getElementById('mwBannerIcon');if(ic)ic.innerHTML=MW_ICON[k]||'';
+    // judul kartu = h3 pertama bila isi diawali h3 (disembunyikan di web agar tidak dobel)
+    var cd=document.getElementById('materiContentFull');
+    var first=cd&&cd.querySelector('.mt-tema-head + *');
+    var ttl=tabNama||full;
+    if(first&&first.tagName==='H3'){ttl=first.textContent.trim();first.classList.add('mw-first');}
+    set('mwCardTitle',mwTitleCase(ttl));
+  }catch(e){}
+}
 function _mtEsc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 // ---- Tab kategori materi (slider kiri/kanan) ----
@@ -5625,8 +5845,9 @@ function selectMateriTab(k,i,initial){
     b.classList.toggle('active',on);
     b.setAttribute('aria-selected',on?'true':'false');
   });
-  cd.innerHTML=`<div class="mt-tema-head"><small>KATEGORI ${i+1} DARI ${m.kategori.length}</small><b>${_mtEsc(c.nama)}</b></div>`+c.konten+materiNavBottom(k);
+  cd.innerHTML=`<div class="mt-tema-head"><small>KATEGORI ${i+1} DARI ${m.kategori.length}</small><b>${_mtEsc(c.nama)}</b></div>`+c.konten+materiCatatan()+materiNavBottom(k);
   fillMateriIcons(cd);
+  mwSyncChrome(k,m,c.nama);
   try{localStorage.setItem('materiTab_'+k,String(i));}catch(e){}
   if(!initial){window.scrollTo(0,0);centerActiveMateriTab(true);}
 }
@@ -5676,8 +5897,9 @@ function showMateri(k){
     setTimeout(function(){centerActiveMateriTab(false);},60);
   } else {
     setMateriTabsVisible(false);
-    cd.innerHTML = m.konten + materiNavBottom(k);
+    cd.innerHTML = m.konten + materiCatatan() + materiNavBottom(k);
     fillMateriIcons(cd);
+    mwSyncChrome(k,m,'');
     goTo('materiContentPage');
   }
   checkNewAchievements();
