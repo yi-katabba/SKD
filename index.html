@@ -2635,33 +2635,61 @@ input:checked+.slider:before{transform:translateX(22px);}
 }
 
 
-/* ===== Banner mengikuti screenshot referensi pengguna ===== */
+/* ===== Banner referensi: ukuran terkunci, tidak ikut rasio gambar ===== */
 @media (min-width:900px){
   .hw-hero{
+    display:flex;
+    position:relative;
+    width:100%;
+    max-width:100%;
     height:185px !important;
+    min-height:185px;
+    max-height:185px;
+    box-sizing:border-box;
+    overflow:hidden;
     border-radius:24px !important;
-    background:#278CF0 url("images/banner-home-reference.jpg") center/100% 100% no-repeat !important;
+    background-color:#278CF0 !important;
+    background-image:url("images/banner-home-reference.webp") !important;
+    background-repeat:no-repeat !important;
+    background-position:center center !important;
+    background-size:cover !important;
     box-shadow:0 8px 20px -12px rgba(21,101,192,.45) !important;
   }
   .hw-hero-txt{
     margin-left:272px !important;
+    min-width:0 !important;
+    max-width:calc(100% - 300px);
     padding:0 !important;
-    background:linear-gradient(90deg,rgba(34,139,239,.98),rgba(34,139,239,.88),rgba(34,139,239,0)) !important;
-    min-width:500px;
+    background:none !important;
   }
   .ql-hero{
-    height:auto !important;
-    aspect-ratio:1473 / 162;
-    min-height:140px;
+    position:relative;
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:162px !important;
+    min-height:162px;
+    max-height:162px;
+    aspect-ratio:auto !important;
+    box-sizing:border-box;
+    overflow:hidden;
     padding:0 !important;
     border-radius:26px !important;
-    background:#319AF8 url("images/banner-latihan-reference.jpg") center/100% 100% no-repeat !important;
+    background-color:#319AF8 !important;
+    background-image:url("images/banner-latihan-reference.webp") !important;
+    background-repeat:no-repeat !important;
+    background-position:center center !important;
+    background-size:cover !important;
     box-shadow:0 8px 20px -12px rgba(21,101,192,.5) !important;
   }
-  .ql-ht{visibility:hidden !important;}
+  .ql-ht{display:none !important;}
   .ql-aside{
     min-height:690px !important;
-    background:#F5F8FF url("images/sidebar-latihan-reference.png") center bottom/100% auto no-repeat !important;
+    background-color:#F5F8FF !important;
+    background-image:url("images/sidebar-latihan-reference.webp") !important;
+    background-repeat:no-repeat !important;
+    background-position:center bottom !important;
+    background-size:100% auto !important;
   }
   .ql-books{display:none !important;}
 }
