@@ -2668,7 +2668,7 @@ input:checked+.slider:before{transform:translateX(22px);}
     background:radial-gradient(120% 160% at 0% 0%,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 55%),linear-gradient(100deg,var(--b1) 0%,var(--b2) 100%);
     box-shadow:0 26px 44px -24px var(--b1),inset 0 1px 0 rgba(255,255,255,.28);
   }
-  #materiPage .mw-banner{height:156px;}
+  #materiPage .mw-banner{height:156px;--b1:#1565C0;--b2:#3B9CF5;}
   .mw-banner::after{content:'';position:absolute;inset:0;pointer-events:none;background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 160' preserveAspectRatio='xMaxYMax meet'%3E%0A%3Cg fill='rgba(255,255,255,0.17)'%3E%0A%3Crect x='196' y='132' width='84' height='28'/%3E%3Crect x='206' y='114' width='64' height='18'/%3E%3Crect x='216' y='96' width='44' height='18'/%3E%3Cpath d='M226 96h24l-12-40z'/%3E%3Crect x='214' y='146' width='10' height='14' fill='rgba(255,255,255,0.1)'/%3E%0A%3Crect x='300' y='136' width='96' height='24'/%3E%3Crect x='314' y='124' width='68' height='12'/%3E%0A%3Cpath d='M341 124l5-84h6l5 84z'/%3E%3Crect x='338' y='30' width='24' height='10' rx='3'/%3E%3Cpath d='M350 4c7 11 9 17 0 26-9-9-7-15 0-26z'/%3E%0A%3Crect x='410' y='108' width='22' height='52'/%3E%3Crect x='436' y='90' width='20' height='70'/%3E%3Crect x='460' y='116' width='28' height='44'/%3E%3Cpath d='M410 108l11-14 11 14z'/%3E%0A%3Ccircle cx='160' cy='140' r='18'/%3E%3Ccircle cx='520' cy='136' r='20'/%3E%3Crect x='156' y='150' width='8' height='10'/%3E%3Crect x='516' y='148' width='8' height='12'/%3E%0A%3C/g%3E%0A%3Cpath d='M330 160C400 152 470 128 560 62V96C490 142 420 160 360 164Z' fill='%23E11D48' fill-opacity='.95'/%3E%0A%3Cpath d='M372 164C440 158 500 138 560 98V128C520 150 470 164 420 168Z' fill='white' fill-opacity='.96'/%3E%0A%3C/svg%3E") right bottom/auto 100% no-repeat;}
   .mw-bicon{
     position:relative;z-index:1;flex-shrink:0;display:flex;align-items:center;justify-content:center;width:80px;height:80px;border-radius:22px;
@@ -2780,6 +2780,89 @@ input:checked+.slider:before{transform:translateX(22px);}
   .mt-catatan b{display:block;font-size:16.5px;font-weight:800;color:var(--ac);}
   .mt-catatan span{font-size:14.5px;color:#4B5563;font-weight:500;}
   #materiContentPage .materi-nav-bottom{margin-top:18px;}
+}
+
+/* =====================================================================
+   MENU LAIN — TAMPILAN WEB (layar >= 900px)
+   Latihan Cepat, Simulasi CAT, Statistik, Pencapaian, Petunjuk, Tentang, Profil
+   ===================================================================== */
+@media (min-width:900px){
+  :is(#quizCepatPage,#simulasiPage,#statistikPage,#pencapaianPage,#petunjukPage,#tentangPage,#akunPage){max-width:none !important;}
+  :is(#quizCepatPage,#simulasiPage,#statistikPage,#pencapaianPage,#petunjukPage,#tentangPage,#akunPage) > div{
+    position:relative;overflow:hidden;min-height:calc(100vh - var(--top-h)) !important;padding-bottom:80px !important;
+    background:linear-gradient(180deg,#EEF2FD 0%,#E7ECFB 100%) !important;
+  }
+  :is(#quizCepatPage,#simulasiPage,#statistikPage,#pencapaianPage,#petunjukPage,#tentangPage,#akunPage) > div::after{
+    content:'';position:absolute;left:0;right:0;bottom:0;height:240px;pointer-events:none;z-index:0;
+    background:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 260' preserveAspectRatio='none'%3E%0A%3Cpath d='M0 150C150 90 300 120 450 170S780 250 1200 120V260H0Z' fill='white' fill-opacity='.45'/%3E%0A%3Cpath d='M0 200C200 150 380 210 620 225S1000 170 1200 205V260H0Z' fill='white' fill-opacity='.55'/%3E%0A%3C/svg%3E") center bottom/100% 100% no-repeat;
+  }
+  /* header lama -> kartu breadcrumb */
+  :is(#quizCepatPage,#simulasiPage,#statistikPage,#pencapaianPage,#petunjukPage,#tentangPage,#akunPage) > div > div[style*="position:fixed"]{
+    position:relative !important;top:auto !important;left:auto !important;transform:none !important;
+    width:calc(100% - 72px) !important;max-width:1180px !important;margin:22px auto 18px !important;box-sizing:border-box;
+    height:50px;padding:0 14px !important;border:1px solid #E6EBF8 !important;border-radius:18px;background:#fff !important;
+    box-shadow:0 12px 26px -18px rgba(76,29,149,.45) !important;z-index:1;
+  }
+  :is(#quizCepatPage,#simulasiPage,#statistikPage,#pencapaianPage,#petunjukPage,#tentangPage,#akunPage) > div > div[style*="position:fixed"] h2{font-size:16px !important;}
+  :is(#quizCepatPage,#simulasiPage,#statistikPage,#pencapaianPage,#petunjukPage,#tentangPage,#akunPage) > div > div[style*="height:54px"]{display:none !important;}
+  /* area isi */
+  :is(#quizCepatPage,#simulasiPage,#statistikPage,#pencapaianPage,#petunjukPage,#tentangPage,#akunPage) > div > div:not([style*="position:fixed"]):not([style*="height:54px"]):not(.mw-banner){
+    position:relative;z-index:1;box-sizing:border-box;max-width:1252px;margin-left:auto !important;margin-right:auto !important;
+    padding-left:36px !important;padding-right:36px !important;
+  }
+  /* banner judul halaman */
+  .pg-banner{width:calc(100% - 72px);max-width:1180px;margin:0 auto 22px;box-sizing:border-box;height:118px;z-index:1;}
+  .pg-banner[data-pg="quizCepatPage"]{--b1:#E65100;--b2:#FB923C;}
+  .pg-banner[data-pg="simulasiPage"]{--b1:#6A1B9A;--b2:#B05CD0;}
+  .pg-banner[data-pg="statistikPage"]{--b1:#1565C0;--b2:#42A5F5;}
+  .pg-banner[data-pg="pencapaianPage"]{--b1:#D97706;--b2:#FBBF24;}
+  .pg-banner[data-pg="petunjukPage"]{--b1:#C62828;--b2:#F2706C;}
+  .pg-banner[data-pg="tentangPage"]{--b1:#00838F;--b2:#2BC8D8;}
+  .pg-banner .mw-bicon{width:68px;height:68px;border-radius:20px;}
+  .pg-banner .mw-bicon svg{width:34px;height:34px;}
+  .pg-banner .mw-btxt b{font-size:32px;}
+  .pg-banner .mw-btxt small{font-size:14px;}
+
+  /* kartu: sedikit lebih lega di layar besar */
+  :is(#quizCepatPage,#simulasiPage,#statistikPage,#pencapaianPage,#petunjukPage,#tentangPage,#akunPage) .ix-card{border-radius:22px;box-shadow:0 20px 36px -26px rgba(21,101,192,.6);}
+  :is(#quizCepatPage,#simulasiPage,#statistikPage,#pencapaianPage,#petunjukPage,#tentangPage,#akunPage) .ix-li{font-size:15px;}
+  :is(#quizCepatPage,#simulasiPage,#statistikPage,#pencapaianPage,#petunjukPage,#tentangPage,#akunPage) .ix-section{font-size:18px;}
+
+  /* Latihan Cepat: 3 kartu sejajar */
+  #quizCepatPage .qc-intro{margin-bottom:14px;}
+  #statsPaketKat{border-radius:22px;overflow:hidden;margin:0 0 14px !important;}
+  #quizCepatGrid{grid-template-columns:repeat(3,1fr) !important;gap:0 20px !important;align-items:start;}
+
+  /* Simulasi CAT: dua kolom */
+  #simulasiPage .sim-wrap{display:grid;grid-template-columns:1fr 1fr;column-gap:24px;align-items:start;}
+  #simulasiPage .sim-hero{grid-column:1;grid-row:1 / span 2;}
+  #simulasiPage .sim-wrap > .ix-section{grid-column:2;grid-row:1;padding-top:0;}
+  #simulasiPage .sim-wrap > .ix-list{grid-column:2;grid-row:2;}
+  #simulasiPage .btn-mulai-simulasi{grid-column:1 / -1;grid-row:3;max-width:560px;justify-self:center;width:100%;margin-top:8px;}
+
+  /* Statistik / Petunjuk / Tentang: dua kolom mengalir */
+  #statistikPage > div > div[style*="padding:16px"],#petunjukPage > div > div[style*="padding:16px"],#tentangPage > div > div[style*="padding:16px"]{
+    column-count:2;column-gap:24px;
+  }
+  #statistikPage > div > div[style*="padding:16px"] > *,#petunjukPage > div > div[style*="padding:16px"] > *,#tentangPage > div > div[style*="padding:16px"] > *{
+    break-inside:avoid;
+  }
+  #tentangPage .ix-section{break-after:avoid;}
+  #tentangPage .ix-card,#tentangPage .apk-card{margin-left:0 !important;margin-right:0 !important;}
+  #tentangPage .ix-section{padding-left:2px;}
+
+  #statsOverview{column-span:all;}
+  #statsHistory,#statsQCHistory,#statsPaketKat{break-inside:auto;}
+
+  /* Pencapaian: 4 kolom */
+  #pencapaianPage .pencapaian-grid{grid-template-columns:repeat(4,1fr) !important;gap:14px !important;}
+  #pencapaianPage .pc-top{margin-bottom:6px;}
+
+  /* Profil: hero lebar penuh + dua kolom */
+  #akunPage .akun-wrap{column-count:2;column-gap:24px;}
+  #akunPage .akun-wrap > *{break-inside:avoid;}
+  #akunPage .akun-wrap > .pf-hero{column-span:all;margin-bottom:16px;}
+  #akunPage .pf-grid{grid-template-columns:repeat(3,1fr) !important;}
 }
 </style>
 </head>
@@ -5806,6 +5889,32 @@ function mwSyncChrome(k,m,tabNama){
     set('mwCardTitle',mwTitleCase(ttl));
   }catch(e){}
 }
+
+// ---- Banner judul halaman (hanya tampil di mode web) ----
+(function initPageBanners(){
+  var cfg={
+    quizCepatPage:['Adu Cepat','Latihan Cepat','Jawab soal sebanyak mungkin dalam waktu terbatas'],
+    simulasiPage:['Mode Ujian','Simulasi Ujian SKD','Rasakan suasana ujian SKD yang sesungguhnya'],
+    statistikPage:['Ringkasan','Statistik Belajar','Pantau perkembangan dan kekuatan belajarmu'],
+    pencapaianPage:['Koleksi','Pencapaian','Kumpulkan badge dengan terus berlatih'],
+    petunjukPage:['Bantuan','Petunjuk','Panduan singkat memakai aplikasi dan tips belajar efektif'],
+    tentangPage:['Informasi','Tentang Aplikasi','Latihan SKD CPNS — mandiri, efektif, dan terarah']
+  };
+  function build(){
+    Object.keys(cfg).forEach(function(id){
+      var pg=document.getElementById(id);if(!pg||pg.querySelector('.pg-banner'))return;
+      var root=pg.firstElementChild;if(!root)return;
+      var hdr=root.querySelector('div[style*="position:fixed"]');if(!hdr)return;
+      var ic=hdr.querySelector('h2 [data-icon]');
+      var key=ic?ic.getAttribute('data-icon'):'';
+      var d=document.createElement('div');d.className='mw-banner pg-banner';d.dataset.pg=id;
+      d.innerHTML='<span class="mw-bicon"'+(key?' data-icon="'+key+'"':'')+'></span><div class="mw-btxt"><small>'+cfg[id][0]+'</small><b>'+cfg[id][1]+'</b><span>'+cfg[id][2]+'</span></div>';
+      var sp=hdr.nextElementSibling;(sp||hdr).insertAdjacentElement('afterend',d);
+      try{fillMateriIcons(d);}catch(e){}
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build);else build();
+})();
 function _mtEsc(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
 // ---- Tab kategori materi (slider kiri/kanan) ----
