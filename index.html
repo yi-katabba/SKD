@@ -2470,6 +2470,83 @@ input:checked+.slider:before{transform:translateX(22px);}
 .imgsz-box.ans{aspect-ratio:1/1;width:calc(70px * var(--img-s-jawab));max-width:100%;font-size:13px;}
 .fontsize-btn .fb-sq{display:flex;align-items:center;justify-content:center;height:20px;}
 .fontsize-btn .fb-sq i{display:block;box-sizing:border-box;border:2px solid currentColor;border-radius:3px;}
+/* ================= MODE WEB (layar lebar >= 900px) =================
+   Menu bawah berubah jadi NAVBAR ATAS: logo di kiri, menu di tengah,
+   lonceng notifikasi + avatar profil di kanan. HP tidak berubah. */
+.nav-brand,.nav-extra,.nav-more,.nav-bell{display:none;}
+.nav-right{display:contents;}
+@media (min-width:900px){
+  :root{--top-h:60px;}
+  body{display:block;background:#EEF3FC;}
+  .app{max-width:none;width:auto;box-shadow:none;}
+  body.has-side-nav .app{padding-top:var(--top-h);}
+  .app > .page{max-width:1180px;margin-left:auto;margin-right:auto;}
+  .app > #loginPage{max-width:none;}
+  /* --- navbar atas --- */
+  .bottom-nav{
+    top:0;left:0;right:0;bottom:auto;transform:none;width:100%;max-width:none;height:var(--top-h);
+    flex-direction:row;align-items:center;justify-content:center;gap:2px;padding:0 28px;
+    background:linear-gradient(135deg,#0D47A1 0%,#1565C0 60%,#1976D2 100%);
+    border:none;box-shadow:0 4px 18px rgba(13,71,161,.35);overflow:visible;
+  }
+  .nav-brand{display:flex;flex-direction:column;justify-content:center;flex:1;padding:0;margin:0;border:none;}
+  .nav-brand b{font-size:17px;font-weight:900;color:#fff;letter-spacing:-.2px;line-height:1.15;}
+  .nav-brand small{font-size:10.5px;color:rgba(255,255,255,.7);font-weight:600;margin:0;}
+  .nav-right{display:flex;flex:1;justify-content:flex-end;align-items:center;gap:12px;}
+  .nav-item{flex:none;width:auto;flex-direction:row;justify-content:center;gap:0;padding:9px 15px;border-radius:10px;cursor:pointer;}
+  .nav-item .nav-icon{display:none;}
+  .nav-item .nav-label{font-size:14px;font-weight:700;color:rgba(255,255,255,.88);}
+  .nav-item:hover{background:rgba(255,255,255,.14);}
+  .nav-item.active{background:rgba(255,255,255,.22);box-shadow:inset 0 -3px 0 #FFB74D;}
+  .nav-item.active .nav-label{color:#fff;}
+  .nav-active-dot{display:none;}
+  .nav-extra{display:flex;}
+  /* dropdown "Lainnya" */
+  .nav-more{display:block;position:relative;padding-bottom:0;}
+  .nav-more-menu{
+    display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:190px;
+    background:#fff;border-radius:14px;padding:6px;box-shadow:0 14px 34px -8px rgba(13,71,161,.4);
+    border:1px solid var(--border);
+  }
+  .nav-more::after{content:'';position:absolute;left:0;right:0;top:100%;height:12px;}
+  .nav-more:hover .nav-more-menu,.nav-more:focus-within .nav-more-menu{display:block;margin-top:10px;}
+  .nav-more-menu .nav-item{display:flex;width:100%;justify-content:flex-start;box-shadow:none;}
+  .nav-more-menu .nav-item .nav-label{color:var(--dark);}
+  .nav-more-menu .nav-item:hover{background:#F1F5F9;}
+  .nav-more-menu .nav-item.active{background:#E3F2FD;}
+  .nav-more-menu .nav-item.active .nav-label{color:var(--blue);}
+  /* lonceng + avatar */
+  .nav-bell{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;
+    border:none;background:rgba(255,255,255,.16);font-size:18px;cursor:pointer;}
+  .nav-bell:hover{background:rgba(255,255,255,.28);}
+  #navProfil{width:40px;height:40px;padding:0;border-radius:50%;background:#fff;box-shadow:none;}
+  #navProfil .nav-label{display:none;}
+  #navProfil .nav-icon{display:flex;width:24px;height:24px;margin:0;align-items:center;justify-content:center;}
+  #navProfil .nav-icon svg,#navProfil .nav-icon img{width:24px;height:24px;}
+  #navProfil:hover{background:#E3F2FD;}
+  #navProfil.active{background:#fff;box-shadow:0 0 0 3px #FFB74D;}
+  /* --- header halaman (fixed) turun di bawah navbar & sejajar konten --- */
+  body.has-side-nav div[style*="max-width:430px"]{top:var(--top-h) !important;max-width:1180px !important;}
+  body.has-side-nav #materiTabsBar{top:calc(var(--top-h) + 51px);max-width:1180px;}
+  body:not(.has-side-nav) div[style*="max-width:430px"]{max-width:none !important;}
+  /* --- isi halaman --- */
+  .inner-page{max-width:none;padding:26px 36px;}
+  .top-header{padding-left:40px;padding-right:40px;}
+  .hero-card-wrap,.stats-row,.streak-section,.menu-grid,.section-title{padding-left:36px;padding-right:36px;}
+  .menu-grid{grid-template-columns:repeat(4,1fr);gap:16px;}
+  .menu-item{padding:24px 18px;}
+  .menu-item:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(21,101,192,.18);}
+  .stats-row{gap:16px;}
+  .pencapaian-grid{grid-template-columns:repeat(3,1fr);gap:12px;}
+  .pf-grid{grid-template-columns:repeat(6,1fr);}
+  .qc-timer-grid{max-width:560px;margin-left:auto;margin-right:auto;}
+  .qc-result-stats{max-width:640px;margin-left:auto;margin-right:auto;}
+  #quizPage .quiz-card,#quizCepatPlayPage .quiz-card{max-width:900px;margin-left:auto;margin-right:auto;}
+  #materiContentPage .materi-full{max-width:860px;margin-left:auto;margin-right:auto;font-size:calc(15.5px * var(--fs-scale-umum));}
+  #quizCepatGrid,#quizCepatSubGrid,#qcSubList{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px;}
+  .option:hover,.qcs-row:hover,.qc-cat-card:hover{box-shadow:0 10px 22px -12px rgba(21,101,192,.5);cursor:pointer;}
+  .btn-masuk:hover,.btn-lanjut:hover{filter:brightness(1.06);}
+}
 </style>
 </head>
 <body>
@@ -3651,6 +3728,7 @@ input:checked+.slider:before{transform:translateX(22px);}
 
 <!-- =========== BOTTOM NAV =========== -->
 <div class="bottom-nav" id="bottomNav" style="display:none;">
+  <div class="nav-brand"><b>🎓 Latihan SKD CPNS</b><small>Versi <span class="app-ver">4.4</span></small></div>
   <button class="nav-item active" id="navHome" onclick="navTo('homePage','navHome')">
     <div class="nav-icon" data-icon="icon_home"></div>
     <div class="nav-label">Home</div>
@@ -3661,16 +3739,25 @@ input:checked+.slider:before{transform:translateX(22px);}
     <div class="nav-label">Latihan</div>
     <div class="nav-active-dot" style="background:transparent;"></div>
   </button>
+  <button class="nav-item nav-extra" data-page="materiPage" onclick="playSound('menu');goTo('materiPage')"><div class="nav-icon">📖</div><div class="nav-label">Materi</div></button>
+  <button class="nav-item nav-extra" data-page="quizCepatPage" onclick="playSound('menu');goTo('quizCepatPage')"><div class="nav-icon">⚡</div><div class="nav-label">Latihan Cepat</div></button>
+  <button class="nav-item nav-extra" data-page="simulasiPage" onclick="playSound('menu');goTo('simulasiPage')"><div class="nav-icon">🖥️</div><div class="nav-label">Simulasi CAT</div></button>
   <button class="nav-item" id="navStat" onclick="navTo('statistikPage','navStat')">
     <div class="nav-icon" data-icon="icon_statistik"></div>
     <div class="nav-label">Statistik</div>
     <div class="nav-active-dot" style="background:transparent;"></div>
   </button>
+  <button class="nav-item nav-extra" data-page="pencapaianPage" onclick="playSound('menu');goTo('pencapaianPage')"><div class="nav-icon">🏆</div><div class="nav-label">Pencapaian</div></button>
+  <div class="nav-more"><button class="nav-item nav-more-btn" type="button"><div class="nav-label">Lainnya ▾</div></button>
+    <div class="nav-more-menu"><button class="nav-item" data-page="petunjukPage" onclick="playSound('menu');goTo('petunjukPage')"><div class="nav-icon">💡</div><div class="nav-label">Petunjuk</div></button><button class="nav-item" data-page="tentangPage" onclick="playSound('menu');goTo('tentangPage')"><div class="nav-icon">ℹ️</div><div class="nav-label">Tentang</div></button></div></div>
+  <div class="nav-right">
+    <button class="nav-bell" type="button" aria-label="Notifikasi" onclick="playSound('menu');toggleNotifPanel()">🔔</button>
   <button class="nav-item" id="navProfil" onclick="navTo('akunPage','navProfil')">
     <div class="nav-icon" data-icon="icon_profil"></div>
     <div class="nav-label">Profil</div>
     <div class="nav-active-dot" style="background:transparent;"></div>
   </button>
+  </div>
 </div>
 
 <div id="achPopup" style="display:none;position:fixed;bottom:90px;left:50%;transform:translateX(-50%);z-index:9999;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 8px 32px rgba(0,0,0,.18);border:1.5px solid #E2E8F0;min-width:280px;max-width:340px;animation:slideUpPop .4s ease;">
@@ -4521,6 +4608,12 @@ function hideSidebarToggle(){
 const NAV_PAGES=['homePage','quizlistPage','statistikPage','akunPage'];
 const NAV_IDS=['navHome','navLatihan','navStat','navProfil'];
 // FIX: Halaman yang MENYEMBUNYIKAN bottom nav
+// Mode web: tandai menu tambahan di sidebar yang sedang aktif
+const DESK_PARENT_={materiContentPage:'materiPage',quizCepatSubPage:'quizCepatPage',quizCepatConfirmPage:'quizCepatPage',quizCepatPlayPage:'quizCepatPage',quizCepatResultPage:'quizCepatPage'};
+function deskNavSync_(pageId){
+  const pg=DESK_PARENT_[pageId]||pageId;
+  document.querySelectorAll('#bottomNav [data-page]').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-page')===pg);});
+}
 const BOTTOM_NAV_HIDE=['loginPage','quizPage','quizCepatPlayPage'];
 
 function navTo(pageId,navId){
@@ -4577,6 +4670,8 @@ function _showPage(pageId){
   if(nav){
     nav.style.display=BOTTOM_NAV_HIDE.includes(pageId)?'none':'flex';
   }
+  document.body.classList.toggle('has-side-nav', !BOTTOM_NAV_HIDE.includes(pageId));
+  deskNavSync_(pageId);
 
   // Kelola sidebar toggle
   if(PAGES_WITH_SIDEBAR.includes(pageId)) showSidebarToggle();
